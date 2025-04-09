@@ -22,9 +22,9 @@ spec:
                 - timeout
                 - {{ .Values.configJob.configTimeout | quote }}
                 - ansible-playbook
-                - -vvv
                 - -e
                 - "@/values/values.json"
+                - -vvv
                 - /playbook/ensure_plugins.yml
               volumeMounts:
                 - name: playbook-volume
