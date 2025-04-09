@@ -23,6 +23,17 @@ spec:
                 - ansible-playbook
                 - -vvv
                 - -e
-                - "@/ansible/ensure_console_plugins_values.yml"
-                - /ansible/ensure_plugins.yml
+                - "@/values/config.json"
+                - /playbook/ensure_plugins.yml
               volumeMounts:
+                - name: playbook-volume
+                  mountPath: /playbook
+                - name: config-volume
+                  mountPath: /values
+          volumes:
+            - name: config-volume
+              configMap:
+                name: ensure-plugins-override
+            - name: playbook-volume
+              configMap:
+                name: ensure-plugins-playbook
