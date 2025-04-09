@@ -19,7 +19,7 @@ spec:
               image: {{ .Values.configJob.image }}
               command:
                 - timeout
-                - {{ .Values.configJob.configTimeout }}
+                - {{ .Values.configJob.configTimeout | quote }}
                 - ansible-playbook
                 - -vvv
                 - -e
