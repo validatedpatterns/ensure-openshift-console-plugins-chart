@@ -1,0 +1,7 @@
+apiVersion: v2
+description: A Helm chart to activate openshift console plugins
+keywords:
+- pattern
+name: activate-openshift-console-plugins
+version: 0.1.0
+dependencies:

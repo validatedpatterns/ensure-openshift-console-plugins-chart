@@ -1,0 +1,38 @@
+---
+ensureConsolePlugins: []
+
+configJob:
+  image: quay.io/hybridcloudpatterns/imperative-container:v1
+  schedule: "*/5 * * * *"
+  activeDeadlineSeconds: 3600
+  imagePullPolicy: Always
+  configTimeout: 1800
+
+serviceAccountName: console-activate-sa
+serviceAccountNamespace: openshift-console-operator
+
+rbac:
+  roles:
+    - name: manage-console-plugins
+      createRole: true
+      scope:
+        cluster: true
+      apiGroups:
+        - '""'
+      resources:
+        - console.operator.openshift.io/v1
+      verbs:
+        - "*"
+  roleBindings:
+    - name: manage-console-plugins
+      createBinding: true
+      scope:
+        cluster: true
+      subjects:
+        kind: ServiceAccount
+        name: manage-console-plugins
+        namespace: openshift-console-operator
+        apiGroup: ""
+      roleRef:
+        kind: ClusterRole
+        name: manage-console-plugins
