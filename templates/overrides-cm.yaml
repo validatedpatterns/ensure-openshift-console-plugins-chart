@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ensure-plugins-override
+data:
+  values.json: |
+    {{ $.Values.ensureConsolePlugins | toJson }}

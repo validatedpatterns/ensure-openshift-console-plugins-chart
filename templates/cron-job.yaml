@@ -1,0 +1,28 @@
+---
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: ensure-console-plugins
+spec:
+  schedule: {{ $.Values.configJob.schedule | quote }}
+  concurrencyPolicy: Forbid
+  jobTemplate:
+    spec:
+      activeDeadlineSeconds: {{ $.Values.configJob.activeDeadlineSeconds }}
+      template:
+        metadata:
+          name: ensure-console-plugins
+        spec:
+          serviceAccountName: {{ $.Values.serviceAccountName }}
+          containers:
+            - name: manage-console-plugins
+              image: {{ .Values.configJob.image }}
+              command:
+                - timeout
+                - {{ .Values.configJob.configTimeout }}
+                - ansible-playbook
+                - -vvv
+                - -e
+                - "@/ansible/ensure_console_plugins_values.yml"
+                - /ansible/ensure_plugins.yml
+              volumeMounts:

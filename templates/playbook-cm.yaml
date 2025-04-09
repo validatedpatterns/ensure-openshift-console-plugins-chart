@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ensure-plugins-playbook
+data:
+  ensure_plugins.yml: |-
+{{ (.Files.Get "files/ensure_plugins.yml") | indent 4 }}
