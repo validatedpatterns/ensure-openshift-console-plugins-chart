@@ -24,7 +24,7 @@ spec:
                 - ansible-playbook
                 - -vvv
                 - -e
-                - "@/values/config.json"
+                - "@/values/values.json"
                 - /playbook/ensure_plugins.yml
               volumeMounts:
                 - name: playbook-volume
