@@ -9,6 +9,12 @@
     kubeconfig: "{{ lookup('env', 'KUBECONFIG') }}"
     ensure_plugins: []
   tasks:
+    - name: See who I am
+      ansible.builtin.command:
+        oc whoami
+      register: whoiam
+      changed_when: false
+
     - name: Retrieve current console object
       kubernetes.core.k8s_info:
         api_version: operator.openshift.io/v1
