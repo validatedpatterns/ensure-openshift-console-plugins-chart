@@ -14,6 +14,7 @@ spec:
           name: ensure-console-plugins
         spec:
           serviceAccountName: {{ $.Values.serviceAccountName }}
+          restartPolicy: OnFailure
           containers:
             - name: manage-console-plugins
               image: {{ .Values.configJob.image }}
