@@ -1,8 +1,8 @@
-# activate-openshift-console-plugins
+# ensure-openshift-console-plugins
 
 ![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square)
 
-A Helm chart to activate openshift console plugins
+A Helm chart to ensure openshift console plugins
 
 This chart is used to activate OpenShift console plugins
 
