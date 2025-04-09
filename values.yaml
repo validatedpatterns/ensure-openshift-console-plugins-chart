@@ -43,7 +43,7 @@ configJob:
   configTimeout: 1800
 
 serviceAccountName: console-activate-sa
-serviceAccountNamespace: openshift-console-operator
+serviceAccountNamespace: openshift-console
 
 rbac:
   roles:
@@ -65,7 +65,7 @@ rbac:
       subjects:
         kind: ServiceAccount
         name: manage-console-plugins
-        namespace: openshift-console-operator
+        namespace: openshift-console
         apiGroup: ""
       roleRef:
         kind: ClusterRole
