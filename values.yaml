@@ -52,9 +52,9 @@ rbac:
       scope:
         cluster: true
       apiGroups:
-        - '""'
+        - operator.openshift.io/v1
       resources:
-        - console.operator.openshift.io/v1
+        - consoles
       verbs:
         - "*"
   roleBindings:
