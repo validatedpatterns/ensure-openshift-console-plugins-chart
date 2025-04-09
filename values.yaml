@@ -52,11 +52,14 @@ rbac:
       scope:
         cluster: true
       apiGroups:
-        - operator.openshift.io/v1
+        - operator.openshift.io
       resources:
         - consoles
       verbs:
-        - "*"
+        - get
+        - list
+        - update
+        - watch
   roleBindings:
     - name: manage-console-plugins
       createBinding: true
