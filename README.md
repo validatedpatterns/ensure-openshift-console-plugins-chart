@@ -24,12 +24,12 @@ This chart is used to activate OpenShift console plugins
 | rbac.roleBindings[0].scope.cluster | bool | `true` |  |
 | rbac.roleBindings[0].subjects.apiGroup | string | `""` |  |
 | rbac.roleBindings[0].subjects.kind | string | `"ServiceAccount"` |  |
-| rbac.roleBindings[0].subjects.name | string | `"manage-console-plugins"` |  |
+| rbac.roleBindings[0].subjects.name | string | `"console-activate-sa"` |  |
 | rbac.roleBindings[0].subjects.namespace | string | `"openshift-console"` |  |
-| rbac.roles[0].apiGroups[0] | string | `"\"\""` |  |
+| rbac.roles[0].apiGroups[0] | string | `"operator.openshift.io/v1"` |  |
 | rbac.roles[0].createRole | bool | `true` |  |
 | rbac.roles[0].name | string | `"manage-console-plugins"` |  |
-| rbac.roles[0].resources[0] | string | `"console.operator.openshift.io/v1"` |  |
+| rbac.roles[0].resources[0] | string | `"consoles"` |  |
 | rbac.roles[0].scope.cluster | bool | `true` |  |
 | rbac.roles[0].verbs[0] | string | `"*"` |  |
 | serviceAccountName | string | `"console-activate-sa"` |  |
