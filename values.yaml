@@ -64,7 +64,7 @@ rbac:
         cluster: true
       subjects:
         kind: ServiceAccount
-        name: manage-console-plugins
+        name: console-activate-sa
         namespace: openshift-console
         apiGroup: ""
       roleRef:
