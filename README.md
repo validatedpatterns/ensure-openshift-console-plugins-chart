@@ -1,6 +1,6 @@
 # ensure-openshift-console-plugins
 
-![Version: 0.1.0](https://img.shields.io/badge/Version-0.1.0-informational?style=flat-square)
+![Version: 0.1.1](https://img.shields.io/badge/Version-0.1.1-informational?style=flat-square)
 
 A Helm chart to ensure openshift console plugins
 
@@ -34,7 +34,8 @@ This chart is used to activate OpenShift console plugins
 | rbac.roles[0].verbs[0] | string | `"get"` |  |
 | rbac.roles[0].verbs[1] | string | `"list"` |  |
 | rbac.roles[0].verbs[2] | string | `"update"` |  |
-| rbac.roles[0].verbs[3] | string | `"watch"` |  |
+| rbac.roles[0].verbs[3] | string | `"patch"` |  |
+| rbac.roles[0].verbs[4] | string | `"watch"` |  |
 | serviceAccountName | string | `"console-activate-sa"` |  |
 | serviceAccountNamespace | string | `"openshift-console"` |  |
 

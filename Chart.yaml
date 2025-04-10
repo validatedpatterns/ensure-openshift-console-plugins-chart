@@ -3,5 +3,5 @@ description: A Helm chart to ensure openshift console plugins
 keywords:
 - pattern
 name: ensure-openshift-console-plugins
-version: 0.1.0
+version: 0.1.1
 dependencies:

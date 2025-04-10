@@ -59,6 +59,7 @@ rbac:
         - get
         - list
         - update
+        - patch
         - watch
   roleBindings:
     - name: manage-console-plugins
